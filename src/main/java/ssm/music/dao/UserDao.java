@@ -1,4 +1,4 @@
-package ssm.music.daoimpl;
+package ssm.music.dao;
 
 import java.util.List;
 

@@ -4,7 +4,9 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
@@ -13,15 +15,15 @@ import ssm.music.entity.User;
 import ssm.music.service.UserService;
 
 @Controller
-@RequestMapping("music/user")
 public class UserController {
 	
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping("test")
-	@ResponseBody
-	public void testlogin() {
+	@RequestMapping("result")
+	public Model testlogin(Model model,@RequestParam(value="username") Integer username) {
+		model.addAttribute("msg",userService.getUserById(username).getUsername());
+		return model;
 		
 	}
 	

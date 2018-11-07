@@ -7,7 +7,7 @@
 <title>测试</title>
 </head>
 <body>
-	<form action="music/user/test" method="post">
+	<form action="result" method="post">
 		用户名：<input type="text" name="username"><br>
 		密码：      <input type="password" name="password"><br>
 		<input type="submit" value="登录"> 
